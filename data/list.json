@@ -1,21 +1,9 @@
 {
-    "task":[
-        {
-            "id": "1",
-            "text": " tarea 1",
-            "description": "descripcion 1"
-
-        },
-        {
-            "id": "2",
-            "text": " tarea 2",
-            "description": "descripcion 2"
-        },
-        {
-            "id": "3",
-            "text": " tarea 3",
-            "description": "descripcion 3"
-
-        }
-    ]
+  "task": [
+    {
+      "id": "2",
+      "text": "Tarea 0",
+      "description": " Desc 0"
+    }
+  ]
 }
