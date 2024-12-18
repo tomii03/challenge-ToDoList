@@ -2,11 +2,20 @@ import { TaskInterface } from "./types/tasks";
 
 const baseUrl = "http://localhost:3001";
 
-export const getAllTask = async (): Promise<TaskInterface> => {
-  const res = await fetch(`${baseUrl}/task`, { cache: "no-store" });
-  const list = await res.json();
-  return list;
+export const getAllTask = async (): Promise<TaskInterface[]> => {
+  try {
+    const res = await fetch(`${baseUrl}/task`, { cache: "no-store" });
+    if (!res.ok) {
+      throw new Error("Failed to fetch tasks");
+    }
+    const list: TaskInterface[] = await res.json();
+    return list;
+  } catch (error) {
+    console.error("Failed to fetch tasks:", error);
+    return [];
+  }
 };
+
 
 export const addTask = async (task: TaskInterface): Promise<TaskInterface> => {
   const res = await fetch(`${baseUrl}/task`, {
